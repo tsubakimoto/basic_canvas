@@ -1,6 +1,7 @@
 window.onload = function() {
   //draw();
-  draw2();
+  //draw2();
+  draw3();
 }
 
 // #01-05
@@ -40,5 +41,21 @@ function draw2() {
   g.addColorStop(1.0,'blue');
   
   ctx.fillStyle=g;
+  ctx.fillRect(0,0,100,100);
+}
+
+// #07
+function draw3() {
+  var canvas = document.getElementById('mycanvas');
+  if (!canvas || !canvas.getContext) return false;
+  var ctx = canvas.getContext('2d');
+  
+  ctx.shadowColor='#ccc';
+  ctx.shadowOffsetX=5;
+  ctx.shadowOffsetY=5;
+  ctx.shadowBlur=2;
+  
+  ctx.globalAlpha=0.5;
+  
   ctx.fillRect(0,0,100,100);
 }
