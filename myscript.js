@@ -1,7 +1,8 @@
 window.onload = function() {
   //draw();
   //draw2();
-  draw3();
+  //draw3();
+  draw4();
 }
 
 // #01-05
@@ -56,6 +57,20 @@ function draw3() {
   ctx.shadowBlur=2;
   
   ctx.globalAlpha=0.5;
+  
+  ctx.fillRect(0,0,100,100);
+}
+
+// #08
+function draw4() {
+  var canvas = document.getElementById('mycanvas');
+  if (!canvas || !canvas.getContext) return false;
+  var ctx = canvas.getContext('2d');
+  
+  // 描画前に変形
+  ctx.scale(0.8,0.8); //縦、横の縮小
+  ctx.rotate(30/180*Math.PI); //回転（引数にはラジアンを指定、基準は左上）
+  ctx.translate(100,10); //x,y
   
   ctx.fillRect(0,0,100,100);
 }
