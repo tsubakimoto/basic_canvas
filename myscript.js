@@ -6,7 +6,8 @@ window.onload = function() {
   //draw5();
   //draw6();
   //draw7();
-  draw8();
+  //draw8();
+  draw9();
 }
 
 // #01-05
@@ -135,6 +136,22 @@ function draw8() {
   img.src = 'girl.jpg';
   img.onload = function() {
     ctx.drawImage(img,10,10); //src,x,y
+  }
+  
+}
+
+// #13
+function draw9() {
+  var canvas = document.getElementById('mycanvas');
+  if (!canvas || !canvas.getContext) return false;
+  var ctx = canvas.getContext('2d');
+  
+  var img = new Image();
+  img.src = 'girl2.jpg';
+  img.onload = function() {
+    var pattern = ctx.createPattern(img,'repeat'); //no-repeat,repeat-x,repeat-y
+    ctx.fillStyle=pattern;
+    ctx.fillRect(20,20,100,100);
   }
   
 }
