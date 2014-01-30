@@ -5,7 +5,8 @@ window.onload = function() {
   //draw4();
   //draw5();
   //draw6();
-  draw7();
+  //draw7();
+  draw8();
 }
 
 // #01-05
@@ -122,4 +123,18 @@ function draw7() {
   
   ctx.fillText('dotinstall',20,20,200); //塗りつぶし：内容、左端、上端、幅
   ctx.strokeText('dotinstall',20,120,200); //中抜き：内容、左端、上端、幅
+}
+
+// #12
+function draw8() {
+  var canvas = document.getElementById('mycanvas');
+  if (!canvas || !canvas.getContext) return false;
+  var ctx = canvas.getContext('2d');
+  
+  var img = new Image();
+  img.src = 'girl.jpg';
+  img.onload = function() {
+    ctx.drawImage(img,10,10); //src,x,y
+  }
+  
 }
