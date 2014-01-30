@@ -2,7 +2,8 @@ window.onload = function() {
   //draw();
   //draw2();
   //draw3();
-  draw4();
+  //draw4();
+  draw5();
 }
 
 // #01-05
@@ -73,4 +74,19 @@ function draw4() {
   ctx.translate(100,10); //x,y
   
   ctx.fillRect(0,0,100,100);
+}
+
+// #09
+function draw5() {
+  var canvas = document.getElementById('mycanvas');
+  if (!canvas || !canvas.getContext) return false;
+  var ctx = canvas.getContext('2d');
+  
+  ctx.beginPath();
+  ctx.moveTo(20,20);
+  ctx.lineTo(120,20);
+  ctx.lineTo(120,120);
+  ctx.closePath(); //始点と終点を結ぶ
+  //ctx.stroke(); //線を引く
+  ctx.fill(); //塗りつぶす
 }
