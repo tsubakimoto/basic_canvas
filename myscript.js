@@ -4,7 +4,8 @@ window.onload = function() {
   //draw3();
   //draw4();
   //draw5();
-  draw6();
+  //draw6();
+  draw7();
 }
 
 // #01-05
@@ -106,4 +107,19 @@ function draw6() {
   //ctx.lineCap="round"; //線の端のスタイル
   ctx.lineCap="butt"; //線の端のスタイル
   ctx.stroke();
+}
+
+// #11
+function draw7() {
+  var canvas = document.getElementById('mycanvas');
+  if (!canvas || !canvas.getContext) return false;
+  var ctx = canvas.getContext('2d');
+  
+  ctx.font='bold 20px Verdana';
+  ctx.textAlign='left'; //right,center,start,end
+  ctx.fillStyle='red';
+  ctx.strokeStyle='red';
+  
+  ctx.fillText('dotinstall',20,20,200); //塗りつぶし：内容、左端、上端、幅
+  ctx.strokeText('dotinstall',20,120,200); //中抜き：内容、左端、上端、幅
 }
