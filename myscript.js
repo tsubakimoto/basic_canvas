@@ -3,7 +3,8 @@ window.onload = function() {
   //draw2();
   //draw3();
   //draw4();
-  draw5();
+  //draw5();
+  draw6();
 }
 
 // #01-05
@@ -89,4 +90,20 @@ function draw5() {
   ctx.closePath(); //始点と終点を結ぶ
   //ctx.stroke(); //線を引く
   ctx.fill(); //塗りつぶす
+}
+
+// #10
+function draw6() {
+  var canvas = document.getElementById('mycanvas');
+  if (!canvas || !canvas.getContext) return false;
+  var ctx = canvas.getContext('2d');
+  
+  ctx.beginPath();
+  //ctx.arc(100,100,50,10/180*Math.PI,210/180*Math.PI);
+  //ctx.arc(100,100,50,0/180*Math.PI,360/180*Math.PI);
+  ctx.arc(100,100,50,0/180*Math.PI,270/180*Math.PI);
+  ctx.lineWidth=15;
+  //ctx.lineCap="round"; //線の端のスタイル
+  ctx.lineCap="butt"; //線の端のスタイル
+  ctx.stroke();
 }
