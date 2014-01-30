@@ -10,7 +10,8 @@ window.onload = function() {
   //draw9();
   //draw10();
   //draw11();
-  draw12();
+  //draw12();
+  draw13();
 }
 
 // #01-05
@@ -216,6 +217,36 @@ function draw12() {
     if (y>canvas.height) y=-50;
     y++;
     ctx.fillRect(0,y,50,50);
+    setTimeout(loop,10);
+  })();
+}
+
+// #17の応用
+function draw13() {
+  var canvas = document.getElementById('mycanvas');
+  if (!canvas || !canvas.getContext) return false;
+  var ctx = canvas.getContext('2d');
+  
+  ctx.fillStyle='red';
+  ctx.save();
+  var x=0;
+  var y=0;
+  
+  (function loop() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    
+    if (x>canvas.width) x=0;
+    if (y>canvas.height) y=-50;
+    
+    x+=5;
+    y++;
+    
+    ctx.fillStyle='gray';
+    ctx.fillRect(x,y,10,10);
+    ctx.restore();
+    ctx.fillRect(0,y,50,50);
+    ctx.save();
+    
     setTimeout(loop,10);
   })();
 }
