@@ -7,7 +7,8 @@ window.onload = function() {
   //draw6();
   //draw7();
   //draw8();
-  draw9();
+  //draw9();
+  draw10();
 }
 
 // #01-05
@@ -154,4 +155,22 @@ function draw9() {
     ctx.fillRect(20,20,100,100);
   }
   
+}
+
+// #14
+function draw10() {
+  var canvas = document.getElementById('mycanvas');
+  if (!canvas || !canvas.getContext) return false;
+  var ctx = canvas.getContext('2d');
+  
+  ctx.fillStyle='yellow';
+  ctx.save(); //設定の保存
+  
+  ctx.fillRect(0,0,50,50);
+  
+  ctx.fillStyle='blue';
+  ctx.fillRect(100,0,50,50);
+  
+  ctx.restore() //設定の復元
+  ctx.fillRect(200,0,50,50);
 }
